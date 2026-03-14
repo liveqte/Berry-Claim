@@ -12,6 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: 🛡️ 启动 Gost 代理转发
+        if: ${{ secrets.GOST_PROXY != '' }}
         run: |
           wget -q https://github.com/ginuerzh/gost/releases/download/v2.11.5/gost-linux-amd64-2.11.5.gz
           gunzip gost-linux-amd64-2.11.5.gz
@@ -26,4 +27,5 @@ jobs:
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           SESSION_ID: ${{ secrets.SESSION_ID }}
+          GOST_PROXY: ${{ secrets.GOST_PROXY }}
         run: bash berryhost.sh
