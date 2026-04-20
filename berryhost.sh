@@ -10,7 +10,7 @@ CUSTOM_ID="daily_claim_button"
 
 # ===== 代理配置（有 GOST_PROXY 时使用，否则直连）=====
 if [ -n "$GOST_PROXY" ]; then
-  PROXY="-x http://127.0.0.1:8080"
+  PROXY="-x http://127.0.0.1:1080"
   echo "🛡️ 使用代理模式"
 else
   PROXY=""
